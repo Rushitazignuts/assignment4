@@ -1,0 +1,41 @@
+<h1 mat-dialog-title>Add Loan</h1>
+<div mat-dialog-container >
+    <form [formGroup] ="productForm" class="m-3 Fmargin">
+        <mat-form-field appearance="outline" class="m-3 ">
+            <mat-label>Payment Id</mat-label>
+            <input formControlName="PaymentId" matInput placeholder="Placeholder" />
+          </mat-form-field>
+    <mat-form-field appearance="outline" class="m-3">
+      <mat-label>Customer Id</mat-label>
+      <input formControlName="CustomerId" matInput placeholder="Placeholder" />
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="m-3">
+        <mat-label>Customer Name</mat-label>
+        <input formControlName="CustomerName" matInput placeholder="Placeholder" />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="m-3">
+        <mat-label>Amount</mat-label>
+        <input formControlName="Amount" matInput placeholder="Placeholder" />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="m-3">
+        <mat-label>Tax</mat-label>
+        <input formControlName="Tax" matInput placeholder="Placeholder" />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="m-3">
+        <mat-label>Mode</mat-label>
+        <input formControlName="Mode" matInput placeholder="Placeholder" />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="m-3">
+        <mat-label>Date</mat-label>
+        <input formControlName="Date" matInput placeholder="Placeholder" />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="m-3">
+        <mat-label>Notes</mat-label>
+        <input formControlName="Notes" matInput placeholder="Placeholder" />
+      </mat-form-field>
+      <div mat-dialog-action [align]="'start'">
+        <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+        <button style="margin: 10px 10px;"  mat-raised-button color="primary" mat-dialog-close (click)="AddLoan()">{{actionBtn}}</button>
+      </div>
+    </form>
+    </div>

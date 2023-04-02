@@ -1,0 +1,14 @@
+@import "../../../styles.scss";
+.side {
+  background-color: $sidebar-bgColor;
+}
+.color {
+  color: $sidebar-listColor;
+}
+.header {
+  background-color: $header-color;
+}
+
+mat-sidenav {
+  width: 200px;
+}

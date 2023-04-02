@@ -1,0 +1,149 @@
+<div class="container-fluid">
+  <h2 class="pt-4">Add New Customer</h2>
+
+  <form class="w-75 m-auto form" [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+    <div class="d-flex flex-sm-nowrap flex-wrap gap-2">
+      <div class="form-group col-md-6 inner-inp">
+        <label>First Name</label>
+        <input required [class.is-invalid]="firstName?.invalid && firstName?.touched" type="text" class="form-control"
+          formControlName="firstName" />
+        <div *ngIf="firstName?.invalid && firstName?.touched">
+          <small [class.d-none]="
+                customerForm.get('firstName')?.valid ||
+                customerForm.get('firstName')?.untouched
+              " class="text-danger">firstName must be required</small>
+        </div>
+      </div>
+      <div class="form-group col-md-6 inner-inp">
+        <label>Last Name</label>
+        <input required [class.is-invalid]="lastName?.invalid && lastName?.touched" type="text" class="form-control"
+          formControlName="lastName" />
+        <div *ngIf="lastName?.invalid && lastName?.touched">
+          <small [class.d-none]="
+                customerForm.get('lastName')?.valid ||
+                customerForm.get('lastName')?.untouched
+              " class="text-danger">lastName must be required</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex flex-sm-nowrap flex-wrap gap-2 mt-3">
+      <div class="form-group col-md-6 inner-inp">
+        <label>Loan Type</label>
+        <input required [class.is-invalid]="loanType?.invalid && loanType?.touched" type="text" class="form-control"
+          formControlName="loanType" />
+        <div *ngIf="loanType?.invalid && loanType?.touched">
+          <small [class.d-none]="
+                customerForm.get('loanType')?.valid ||
+                customerForm.get('loanType')?.untouched
+              " class="text-danger">loanType must be required</small>
+        </div>
+      </div>
+      <div class="form-group col-md-6 inner-inp">
+        <label>Loan Amount</label>
+        <input required [class.is-invalid]="loanAmount?.invalid && loanAmount?.touched" type="text" class="form-control"
+          formControlName="loanAmount" />
+        <div *ngIf="loanAmount?.invalid && loanAmount?.touched">
+          <small [class.d-none]="
+                customerForm.get('loanAmount')?.valid ||
+                customerForm.get('loanAmount')?.untouched
+              " class="text-danger">loanType must be required</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex flex-sm-nowrap flex-wrap gap-2 mt-3">
+      <div class="form-group col-md-6 inner-inp">
+        <label>Email</label>
+        <input required [class.is-invalid]="email?.invalid && email?.touched" type="email" class="form-control"
+          formControlName="email" />
+        <div *ngIf="email?.invalid && email?.touched">
+          <small [class.d-none]="
+                customerForm.get('email')?.valid ||
+                customerForm.get('email')?.untouched
+              " class="text-danger">email must be required</small>
+        </div>
+      </div>
+      <div class="form-group col-md-6 inner-inp">
+        <label for="inputPassword4">Alternate Email</label>
+        <input type="email" class="form-control" formControlName="alternateEmail" />
+      </div>
+    </div>
+
+    <div class="d-flex flex-sm-nowrap flex-wrap gap-2 mt-3">
+      <div class="form-group col-md-6 inner-inp">
+        <label for="inputEmail4">Phone</label>
+        <input required [class.is-invalid]="phone?.invalid && phone?.touched" type="text" class="form-control"
+          formControlName="phone" />
+        <div *ngIf="phone?.invalid && phone?.touched">
+          <small [class.d-none]="
+                customerForm.get('phone')?.valid ||
+                customerForm.get('phone')?.untouched
+              " class="text-danger">phone must be required</small>
+        </div>
+      </div>
+      <div class="form-group col-md-6 inner-inp">
+        <label for="inputPassword4">Alternate Phone</label>
+        <input type="text" class="form-control" formControlName="alternatePhone" />
+      </div>
+    </div>
+
+    <div class="form-group mt-3">
+      <label>Address</label>
+      <input required [class.is-invalid]="address?.invalid && address?.touched" type="text" class="form-control"
+        placeholder="1234 Main St" formControlName="address" />
+      <div *ngIf="address?.invalid && address?.touched">
+        <small [class.d-none]="
+              customerForm.get('address')?.valid ||
+              customerForm.get('address')?.untouched
+            " class="text-danger">address must be required</small>
+      </div>
+    </div>
+    <div class="form-group mt-3">
+      <label for="inputAddress2">Address 2</label>
+      <input type="text" class="form-control" placeholder="Apartment, studio, or floor" formControlName="address2" />
+    </div>
+    <div class="d-flex gap-2 mt-3">
+      <div class="form-group col-md-6">
+        <label for="inputCity">City</label>
+        <input required [class.is-invalid]="city?.invalid && city?.touched" type="text" class="form-control"
+          formControlName="city" />
+        <div *ngIf="city?.invalid && city?.touched">
+          <small [class.d-none]="
+                customerForm.get('city')?.valid ||
+                customerForm.get('city')?.untouched
+              " class="text-danger">city must be required</small>
+        </div>
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputState">State</label>
+        <select class="form-control" formControlName="state">
+          <option selected>Choose a state...</option>
+          <option>Gujarat</option>
+          <option>MP</option>
+          <option>UP</option>
+          <option>Rajasthan</option>
+          <option>Kerala</option>
+        </select>
+      </div>
+      <div class="form-group col-md-2">
+        <label for="inputZip">Zip</label>
+        <input type="text" class="form-control" formControlName="zip" />
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input mt-2" type="checkbox" />
+        <label class="form-check-label mt-2" for="gridCheck">
+          Accepted Terms and Condition
+        </label>
+      </div>
+    </div>
+    <button [disabled]="!customerForm.valid" type="submit" class="btn btn-primary">
+      Add Customer
+    </button>
+    <button type="submit" class="btn text-primary border-primary m-3">
+      Cancel
+    </button>
+  </form>
+</div>

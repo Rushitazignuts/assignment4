@@ -1,0 +1,8 @@
+.Fmargin{
+    color: white;
+ }
+ @media only screen and (max-width: 320px) {
+     .Fmargin {
+      margin : 0 ;
+     }
+   }

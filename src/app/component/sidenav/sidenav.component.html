@@ -1,0 +1,35 @@
+<mat-toolbar class="header">
+  <mat-toolbar-row>
+    <button mat-icon-button *ngIf="sidenav.mode === 'side'" (click)="sidenav.toggle()">
+      <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+      <mat-icon *ngIf="sidenav.opened">close</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav" opened="true" mode="side" class="sideBar">
+    <mat-nav-list class="color">
+      <div class="d-flex flex-row justify-content-between">
+        <mat-icon class="mt-2">home</mat-icon><a mat-list-item routerLink="/home">
+          <span class="color">DashBoard</span></a>
+      </div>
+
+
+
+
+      <div class="d-flex flex-row">
+        <mat-icon class="mt-2">book</mat-icon><a mat-list-item routerLink="/loans"> Loans</a>
+      </div>
+      <div class="d-flex flex-row">
+        <mat-icon class="mt-2">person</mat-icon><a mat-list-item routerLink="/customers"> Customers</a>
+      </div>
+
+      <div class="d-flex flex-row">
+        <mat-icon class="mt-2">note</mat-icon><a mat-list-item routerLink="/charts"> Charts</a>
+      </div>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div style="height: 88vh"></div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

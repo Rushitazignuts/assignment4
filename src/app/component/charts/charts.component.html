@@ -1,0 +1,26 @@
+<div id="chart">
+    <apx-chart
+      [series]="chartSeries"
+      [chart]="chartDetails"
+      [labels]="chartLabels"
+      [title]="chartTitle"
+      [dataLabels]="chartDataLabels"
+      [legend]="chartLegend"
+    ></apx-chart>
+    <br />
+    <hr />
+    <br />
+    <apx-chart
+      [series]="chartOptions.series"
+      [chart]="chartOptions.chart"
+      [xaxis]="chartOptions.xaxis"
+      [dataLabels]="chartOptions.dataLabels"
+      [grid]="chartOptions.grid"
+      [stroke]="chartOptions.stroke"
+      [title]="chartOptions.title"
+      [labels]="chartOptions.labels"
+      [annotations]="chartOptions.annotations"
+      [legend]="chartOptions.legend"
+    ></apx-chart>
+  </div>
+  
