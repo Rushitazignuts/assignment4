@@ -87,6 +87,7 @@ export class LoansComponent implements OnInit {
       });
   }
   deleteData(id: number) {
+    if(confirm("are you sure want to delete")){
     this.loanService.delete(id).subscribe({
       next: (res) => {
         alert('delete');
@@ -97,4 +98,5 @@ export class LoansComponent implements OnInit {
       },
     });
   }
+}
 }

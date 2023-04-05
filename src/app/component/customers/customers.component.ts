@@ -41,15 +41,18 @@ export class CustomersComponent implements OnInit {
     }
   }
   deleteCData(id: number) {
-    this.loanService.CDelete(id).subscribe({
-      next: (res) => {
-        alert('delete');
-        //this.getAll();
-      },
-      error: () => {
-        alert('error');
-      },
-    });
+    if(confirm("are you sure want to delete")){
+
+      this.loanService.CDelete(id).subscribe({
+        next: (res) => {
+          alert('delete');
+          //this.getAll();
+        },
+        error: () => {
+          alert('error');
+        },
+      });
+    }
   }
 
 }
