@@ -6,7 +6,7 @@ import { LoanService } from '../../service/loan.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
   displayedColumns: string[] = [
@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   ];
   dataSource!: MatTableDataSource<any>;
   getData: any;
-  
+
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   constructor(private loanService: LoanService) {}
@@ -29,11 +29,8 @@ export class HomeComponent implements OnInit {
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
       console.log(data);
-      
-      
     });
   }
-  
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -43,5 +40,4 @@ export class HomeComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-
 }

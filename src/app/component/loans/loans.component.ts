@@ -87,16 +87,16 @@ export class LoansComponent implements OnInit {
       });
   }
   deleteData(id: number) {
-    if(confirm("are you sure want to delete")){
-    this.loanService.delete(id).subscribe({
-      next: (res) => {
-        alert('delete');
-        //this.getAll();
-      },
-      error: () => {
-        alert('error');
-      },
-    });
+    if (confirm('are you sure want to delete')) {
+      this.loanService.delete(id).subscribe({
+        next: (res) => {
+          alert('delete');
+          //this.getAll();
+        },
+        error: () => {
+          alert('error');
+        },
+      });
+    }
   }
-}
 }

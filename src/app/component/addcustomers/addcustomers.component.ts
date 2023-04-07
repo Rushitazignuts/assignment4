@@ -5,7 +5,7 @@ import { LoanService } from '../../service/loan.service';
 @Component({
   selector: 'app-addcustomers',
   templateUrl: './addcustomers.component.html',
-  styleUrls: ['./addcustomers.component.scss']
+  styleUrls: ['./addcustomers.component.scss'],
 })
 export class AddcustomersComponent implements OnInit {
   customerForm!: FormGroup;
@@ -64,5 +64,4 @@ export class AddcustomersComponent implements OnInit {
       },
     });
   }
-
 }

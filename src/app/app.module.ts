@@ -21,7 +21,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { MatDividerModule } from '@angular/material/divider';
-import { MainComponent } from './component/main/main.component';
 import { SidenavComponent } from './component/sidenav/sidenav.component';
 import { HomeComponent } from './component/home/home.component';
 import { ChartsComponent } from './component/charts/charts.component';
@@ -33,7 +32,6 @@ import { AddcustomersComponent } from './component/addcustomers/addcustomers.com
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent,
     SidenavComponent,
     HomeComponent,
     ChartsComponent,

@@ -5,7 +5,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 @Component({
   selector: 'app-addloans',
   templateUrl: './addloans.component.html',
-  styleUrls: ['./addloans.component.scss']
+  styleUrls: ['./addloans.component.scss'],
 })
 export class AddloansComponent implements OnInit {
   productForm!: FormGroup;
@@ -74,5 +74,4 @@ export class AddloansComponent implements OnInit {
       },
     });
   }
-
 }
