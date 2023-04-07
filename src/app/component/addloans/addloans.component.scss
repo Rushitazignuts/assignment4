@@ -1,8 +1,15 @@
-.Fmargin{
-    color: white;
- }
- @media only screen and (max-width: 320px) {
-     .Fmargin {
-      margin : 0 ;
-     }
-   }
+.formFW{
+  color:black;
+}
+@media only screen and (max-width: 576px) {
+  .formFW {
+    width: 160px;
+    margin: 0;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .formFW {
+    width: 140px;
+    margin: 0;
+  }
+}

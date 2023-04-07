@@ -1,4 +1,4 @@
-<mat-toolbar class="header">
+<!-- <mat-toolbar class="header">
   <mat-toolbar-row>
     <button mat-icon-button *ngIf="sidenav.mode === 'side'" (click)="sidenav.toggle()">
       <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
@@ -31,5 +31,64 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <div style="height: 88vh"></div>
+  </mat-sidenav-content>
+</mat-sidenav-container> -->
+
+
+
+<mat-toolbar class="header">
+  <button
+  mat-icon-button
+  *ngIf="sidenav.mode === 'over'"
+  (click)="sidenav.toggle()"
+>
+  <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+  <mat-icon *ngIf="sidenav.opened">close</mat-icon>
+</button>
+<form class="form-inline my-3 my-lg-0 w-50 mx-3">
+  <input
+    class="form-control mr-sm-2"
+    type="search"
+    placeholder="Search"
+    aria-label="Search"
+    list="datalistOptions"
+    id="exampleDataList"
+  />
+</form>
+
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav" mode="over" opened>
+    <mat-nav-list class="color">
+      <div class="d-flex flex-row justify-content-between">
+        <mat-icon class="mt-2">home</mat-icon
+        ><a mat-list-item routerLink="/home">
+          <span class="color">DashBoard</span></a
+        >
+      </div>
+      <mat-divider></mat-divider>
+      <div class="d-flex flex-row">
+        <mat-icon class="mt-2">book</mat-icon
+        ><a mat-list-item routerLink="/loans"> 
+           <span class="color">Loans</span></a>
+      </div>
+      <mat-divider></mat-divider>
+      <div class="d-flex flex-row">
+        <mat-icon class="mt-2">person</mat-icon
+        ><a mat-list-item routerLink="/customers">
+          <span class="color">Customers</span></a>
+      </div>
+      <mat-divider></mat-divider>
+      <div class="d-flex flex-row">
+        <mat-icon class="mt-2">note</mat-icon
+        ><a mat-list-item routerLink="/charts"> 
+          <span class="color">Charts</span></a>
+      </div>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="mx-3">
+    <router-outlet></router-outlet>
+  </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

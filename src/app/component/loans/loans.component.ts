@@ -51,7 +51,7 @@ export class LoansComponent implements OnInit {
     this.dialog
       .open(AddloansComponent, {
         width: '50%',
-        height: '60%',
+        height: '50%',
       })
       .afterClosed()
       .subscribe((val) => {
@@ -76,7 +76,7 @@ export class LoansComponent implements OnInit {
     this.dialog
       .open(AddloansComponent, {
         width: '50%',
-        height: '60%',
+        height: '50%',
         data: row,
       })
       .afterClosed()
