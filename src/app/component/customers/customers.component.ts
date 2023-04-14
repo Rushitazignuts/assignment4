@@ -1,58 +1,92 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
+
 import { LoanService } from '../../service/loan.service';
+import { MatDialog } from '@angular/material/dialog';
+import { AddcustomersComponent } from '../addcustomers/addcustomers.component';
+export interface Column {
+  columnDef: string;
+  header: string;
+}
 @Component({
   selector: 'app-customers',
   templateUrl: './customers.component.html',
-  styleUrls: ['./customers.component.scss']
+  styleUrls: ['./customers.component.scss'],
 })
 export class CustomersComponent implements OnInit {
-  displayedColumns: string[] = [
-    'firstName',
-    'lastName',
-    'loanType',
-    'loanAmount',
-    'email',
-    'phone',
-    'address',
-    'city',
-    'action',
-  ];
-  dataSource!: MatTableDataSource<any>;
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort!: MatSort;
-  constructor(private loanService: LoanService) {}
+  getCustomerData: any;
+  CustomerData: any;
+  tableColumns!: Column[];
+
+  constructor(private loanService: LoanService, private dialog: MatDialog) {}
   ngOnInit(): void {
-    this.loanService.getCustomerData().subscribe((data: any) => {
-      this.dataSource = new MatTableDataSource(data);
-      this.dataSource.paginator = this.paginator;
-      this.dataSource.sort = this.sort;
-      console.log(data);
-    });
-  }
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
-  }
-  deleteCData(id: number) {
-    if(confirm("are you sure want to delete")){
-
-      this.loanService.CDelete(id).subscribe({
-        next: (res) => {
-          alert('delete');
-          //this.getAll();
-        },
-        error: () => {
-          alert('error');
-        },
+    this.CustomerData = this.loanService
+      .getCustomerData()
+      .subscribe((data: any) => {
+        this.getCustomerData = data;
+        console.log(data);
       });
-    }
+    this.initColumns();
+  }
+  initColumns(): void {
+    this.tableColumns = [
+      {
+        columnDef: 'firstName',
+        header: 'First Name',
+      },
+      {
+        columnDef: 'lastName',
+        header: 'Last Name',
+      },
+      {
+        columnDef: 'loanType',
+        header: 'Loan Type',
+      },
+      {
+        columnDef: 'loanAmount',
+        header: 'Loan Amount',
+      },
+      {
+        columnDef: 'email',
+        header: 'Email',
+      },
+      {
+        columnDef: 'phone',
+        header: 'Phone',
+      },
+      {
+        columnDef: 'address',
+        header: 'Address',
+      },
+      {
+        columnDef: 'city',
+        header: 'City',
+      },
+    ];
   }
 
+  openDialog() {
+    this.dialog
+      .open(AddcustomersComponent, {
+        width: '50%',
+        height: '50%',
+      })
+      .afterClosed()
+      .subscribe((val) => {
+        if (val == 'save') {
+        }
+      });
+  }
+  editCustomer(id: any) {
+    this.dialog
+      .open(AddcustomersComponent, {
+        width: '50%',
+        height: '50%',
+        data: id,
+      })
+      .afterClosed()
+      .subscribe((val) => {
+        if (val == 'update') {
+        }
+      });
+  }
 }

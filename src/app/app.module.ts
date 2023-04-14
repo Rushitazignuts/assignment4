@@ -28,6 +28,7 @@ import { LoansComponent } from './component/loans/loans.component';
 import { AddloansComponent } from './component/addloans/addloans.component';
 import { CustomersComponent } from './component/customers/customers.component';
 import { AddcustomersComponent } from './component/addcustomers/addcustomers.component';
+import { TableComponent } from './shared/table/table.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { AddcustomersComponent } from './component/addcustomers/addcustomers.com
     AddloansComponent,
     CustomersComponent,
     AddcustomersComponent,
+    TableComponent,
   ],
   imports: [
     BrowserModule,
