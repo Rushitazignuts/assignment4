@@ -82,19 +82,4 @@ export class AddcustomersComponent implements OnInit {
         },
       });
   }
-
-  onSubmit() {
-    console.log(this.customerForm.value);
-    console.log(this.customerForm.value.id);
-
-    this.loanService.postcustomerData(this.customerForm.value).subscribe({
-      next: (res) => {
-        alert('adedd');
-        this.customerForm.reset();
-      },
-      error: () => {
-        alert('error');
-      },
-    });
-  }
 }
