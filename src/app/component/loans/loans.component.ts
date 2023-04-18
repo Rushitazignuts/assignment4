@@ -82,4 +82,16 @@ export class LoansComponent implements OnInit {
         }
       });
   }
+  deleteData(id: any) {
+    if (confirm('are you sure want to delete')) {
+      this.loanService.LDelete(id).subscribe({
+        next: (res) => {
+          alert('delete');
+        },
+        error: () => {
+          alert('error');
+        },
+      });
+    }
+  }
 }

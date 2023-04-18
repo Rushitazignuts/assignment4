@@ -42,10 +42,9 @@ export class TableComponent implements OnInit {
   @Input() set CustomerData(data: any[]) {
     this.setCustomerDataSource(data);
   }
+  @Output() delete: EventEmitter<any> = new EventEmitter<any>();
 
-  @Output() cusAction: EventEmitter<any> = new EventEmitter<any>();
-  @Output() loanAction: EventEmitter<any> = new EventEmitter<any>();
-
+  @Output() edit: EventEmitter<any> = new EventEmitter<any>();
   constructor(private loanService: LoanService) {}
 
   ngOnInit() {
@@ -110,10 +109,10 @@ export class TableComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-  onCustomerEdit(element: any) {
-    this.cusAction.emit(element);
+  onEdit(element: any) {
+    this.edit.emit(element);
   }
-  onLoanEdit(element: any) {
-    this.loanAction.emit(element);
+  onDelete(e: any) {
+    this.delete.emit(e);
   }
 }

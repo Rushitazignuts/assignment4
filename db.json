@@ -151,33 +151,6 @@
   ],
   "Customers": [
     {
-      "firstName": "trusha",
-      "lastName": "vaghasiya",
-      "loanType": "education",
-      "loanAmount": "454245",
-      "email": "tru@gmail.com",
-      "phone": "1234567890",
-      "address": "1234,Gondal",
-      "city": "jetpur",
-      "id": 20
-    },
-    {
-      "firstName": "john",
-      "lastName": "duo",
-      "loanType": "Home",
-      "loanAmount": "100000",
-      "email": "john@gmail.com",
-      "alternateEmail": "",
-      "phone": "1357246890",
-      "alternatePhone": "",
-      "address": "Mumbai",
-      "address2": "",
-      "city": "Mumbai",
-      "state": "MP",
-      "zip": "111233",
-      "id": 21
-    },
-    {
       "firstName": "nik",
       "lastName": "joh",
       "loanType": "personal",

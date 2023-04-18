@@ -8,7 +8,8 @@
 <app-table
   [tableColumns]="tableColumns"
   [CustomerData]="CustomerData"
-  (cusAction)="editCustomer($event)"
+  (edit)="editCustomer($event)"
+  (delete)="deleteCus($event)"
   [rowActionIcon]="'edit'"
 >
 </app-table>

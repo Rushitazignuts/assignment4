@@ -29,11 +29,10 @@ export class LoanService {
   customerPut(data: any, id: number) {
     return this.Http.put<any>('http://localhost:3000/Customers/' + id, data);
   }
-  LDelete(PaymentId: number) {
-    return this.Http.delete<any>('http://localhost:3000/loans/' + PaymentId);
+  LDelete(id: number) {
+    return this.Http.delete<any>('http://localhost:3000/loans/' +id);
   }
   CDelete(id: number) {
-    console.log(id);
-    return this.Http.delete<any>('http://localhost:3000/Customers/' + id);
+    return this.Http.delete<any>('http://localhost:3000/Customers/' +id);
   }
 }

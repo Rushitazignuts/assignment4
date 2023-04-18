@@ -89,4 +89,16 @@ export class CustomersComponent implements OnInit {
         }
       });
   }
+  deleteCus(id: any) {
+    if (confirm('are you sure want to delete')) {
+      this.loanService.CDelete(id).subscribe({
+        next: (res) => {
+          alert('delete');
+        },
+        error: () => {
+          alert('error');
+        },
+      });
+    }
+  }
 }

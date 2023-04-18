@@ -9,6 +9,7 @@
   [tableColumns]="tableColumns"
   [loanData]="loanData"
   [rowActionIcon]="'edit'"
-  (loanAction)="editData($event)"
+  (edit)="editData($event)"
+  (delete)="deleteData($event)"
 >
 </app-table>
