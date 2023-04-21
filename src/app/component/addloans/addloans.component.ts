@@ -46,7 +46,6 @@ export class AddloansComponent implements OnInit {
     console.log(this.editData);
   }
   AddLoan() {
-    console.log(this.productForm.value);
     if (!this.editData) {
       if (this.productForm.valid) {
         this.loanService.loanProduct(this.productForm.value).subscribe({

@@ -51,7 +51,6 @@ export class AddcustomersComponent implements OnInit {
   }
 
   AddCustomer() {
-    console.log(this.customerForm.value);
     if (!this.editCustomer) {
       if (this.customerForm.valid) {
         this.loanService.postcustomerData(this.customerForm.value).subscribe({

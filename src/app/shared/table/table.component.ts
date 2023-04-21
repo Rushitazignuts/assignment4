@@ -80,7 +80,6 @@ export class TableComponent implements OnInit {
       this.getData = data;
 
       this.dataSource = new MatTableDataSource<any>(data);
-      console.log(data);
     });
   }
 
@@ -89,7 +88,6 @@ export class TableComponent implements OnInit {
       this.getLoanData = data;
 
       this.dataSource = new MatTableDataSource<any>(data);
-      console.log(data);
     });
   }
   setCustomerDataSource(data: any) {
@@ -97,7 +95,6 @@ export class TableComponent implements OnInit {
       this.getCustomerData = data;
 
       this.dataSource = new MatTableDataSource<any>(data);
-      console.log(data);
     });
   }
 

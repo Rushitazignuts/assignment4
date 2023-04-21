@@ -12,7 +12,6 @@ export class AppComponent implements OnInit {
   ngOnInit() {}
   constructor(private loanService: LoanService) {
     this.loanService.getData().subscribe((data) => {
-      console.log(data);
       this.getData = data;
     });
   }

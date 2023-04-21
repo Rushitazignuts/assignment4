@@ -23,7 +23,7 @@ export class CustomersComponent implements OnInit {
       .getCustomerData()
       .subscribe((data: any) => {
         this.getCustomerData = data;
-        console.log(data);
+        
       });
     this.initColumns();
   }

@@ -1,4 +1,72 @@
 {
+  "loans": [
+    {
+      "PaymentId": "501",
+      "CustomerId": "201",
+      "CustomerName": "john",
+      "Amount": "$1234",
+      "Tax": "7%",
+      "Mode": "online",
+      "Date": "1-2-2022",
+      "Notes": "notes",
+      "id": 701
+    },
+    {
+      "PaymentId": "502",
+      "CustomerId": "202",
+      "CustomerName": "john",
+      "Amount": "$1234",
+      "Tax": "7%",
+      "Mode": "online",
+      "Date": "1-2-2022",
+      "Notes": "notes",
+      "id": 702
+    },
+    {
+      "PaymentId": "503",
+      "CustomerId": "203",
+      "CustomerName": "john",
+      "Amount": "$1234",
+      "Tax": "7%",
+      "Mode": "online",
+      "Date": "1-2-2022",
+      "Notes": "notes",
+      "id": 703
+    },
+    {
+      "PaymentId": "505",
+      "CustomerId": "706",
+      "CustomerName": "kirti",
+      "Amount": "$2345",
+      "Tax": "8%",
+      "Mode": "cash",
+      "Date": "1-2-2022",
+      "Notes": "this is note",
+      "id": 704
+    },
+    {
+      "PaymentId": "506",
+      "CustomerId": "707",
+      "CustomerName": "nik",
+      "Amount": "$2345",
+      "Tax": "8%",
+      "Mode": "online",
+      "Date": "1-2-2022",
+      "Notes": "this is note",
+      "id": 705
+    },
+    {
+      "PaymentId": "508",
+      "CustomerId": "708",
+      "CustomerName": "duo",
+      "Amount": "$3456",
+      "Tax": "9%",
+      "Mode": "cash",
+      "Date": "2-2-2023",
+      "Notes": "notes",
+      "id": 706
+    }
+  ],
   "post": [
     {
       "id": 1,
@@ -81,91 +149,7 @@
       "status": "active"
     }
   ],
-  "loans": [
-    {
-      "PaymentId": "501",
-      "CustomerId": "201",
-      "CustomerName": "john",
-      "Amount": "$1234",
-      "Tax": "7%",
-      "Mode": "online",
-      "Date": "1-2-2022",
-      "Notes": "notes",
-      "id": 701
-    },
-    {
-      "PaymentId": "502",
-      "CustomerId": "202",
-      "CustomerName": "john",
-      "Amount": "$1234",
-      "Tax": "7%",
-      "Mode": "online",
-      "Date": "1-2-2022",
-      "Notes": "notes",
-      "id": 702
-    },
-    {
-      "PaymentId": "503",
-      "CustomerId": "203",
-      "CustomerName": "john",
-      "Amount": "$1234",
-      "Tax": "7%",
-      "Mode": "online",
-      "Date": "1-2-2022",
-      "Notes": "notes",
-      "id": 703
-    },
-    {
-      "PaymentId": "505",
-      "CustomerId": "706",
-      "CustomerName": "kirti",
-      "Amount": "$2345",
-      "Tax": "8%",
-      "Mode": "cash",
-      "Date": "1-2-2022",
-      "Notes": "this is note",
-      "id": 704
-    },
-    {
-      "PaymentId": "506",
-      "CustomerId": "707",
-      "CustomerName": "nik",
-      "Amount": "$2345",
-      "Tax": "8%",
-      "Mode": "online",
-      "Date": "1-2-2022",
-      "Notes": "this is note",
-      "id": 705
-    },
-    {
-      "PaymentId": "508",
-      "CustomerId": "708",
-      "CustomerName": "duo",
-      "Amount": "$3456",
-      "Tax": "9%",
-      "Mode": "cash",
-      "Date": "2-2-2023",
-      "Notes": "notes",
-      "id": 706
-    }
-  ],
   "Customers": [
-    {
-      "firstName": "nik",
-      "lastName": "joh",
-      "loanType": "personal",
-      "loanAmount": "222200",
-      "email": "nik@gmail.com",
-      "alternateEmail": "",
-      "phone": "9014567895",
-      "alternatePhone": "",
-      "address": "shiv krupa society",
-      "address2": "",
-      "city": "Vadodara",
-      "state": "Gujarat",
-      "zip": "345678",
-      "id": 22
-    },
     {
       "firstName": "otto",
       "lastName": "duo",

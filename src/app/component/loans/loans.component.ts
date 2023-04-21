@@ -24,7 +24,7 @@ export class LoansComponent implements OnInit {
   ngOnInit() {
     this.loanData = this.loanService.getLoanData().subscribe((data: any) => {
       this.getLoanData = data;
-      console.log(data);
+      
     });
     this.initColumns();
   }
@@ -82,9 +82,9 @@ export class LoansComponent implements OnInit {
         }
       });
   }
-  deleteData(id: any) {
+  deleteData(id:number) {
     if (confirm('are you sure want to delete')) {
-      this.loanService.LDelete(id).subscribe({
+      this.loanService.LoanDelete(id).subscribe({
         next: (res) => {
           alert('delete');
         },
