@@ -3,31 +3,79 @@
   <form [formGroup]="customerForm">
     <mat-form-field appearance="outline" class="m-3 formFW">
       <mat-label>First Name</mat-label>
-      <input formControlName="firstName" matInput placeholder="Placeholder" />
+      <input
+        type="text"
+        formControlName="firstName"
+        matInput
+        placeholder="Placeholder"
+      />
+      <mat-error *ngIf="customerForm.invalid">this field is required</mat-error>
     </mat-form-field>
     <mat-form-field appearance="outline" class="m-3 formFW">
       <mat-label>last Name</mat-label>
-      <input formControlName="lastName" matInput placeholder="Placeholder" />
+      <input
+        type="text"
+        formControlName="lastName"
+        matInput
+        placeholder="Placeholder"
+      />
+      <mat-error *ngIf="customerForm.invalid">this field is required</mat-error>
     </mat-form-field>
     <mat-form-field appearance="outline" class="m-3 formFW">
       <mat-label>Loan Type</mat-label>
-      <input formControlName="loanType" matInput placeholder="Placeholder" />
+      <input
+        type="text"
+        formControlName="loanType"
+        matInput
+        placeholder="Placeholder"
+      />
+      <mat-error *ngIf="customerForm.invalid">this field is required</mat-error>
     </mat-form-field>
     <mat-form-field appearance="outline" class="m-3 formFW">
       <mat-label>Loan Amount</mat-label>
-      <input formControlName="loanAmount" matInput placeholder="Placeholder" />
+      <input formControlName="loanAmount" matInput placeholder="$100" />
+      <mat-error *ngIf="customerForm.invalid">this field is required</mat-error>
     </mat-form-field>
     <mat-form-field appearance="outline" class="m-3 formFW">
       <mat-label>Email</mat-label>
-      <input formControlName="email" matInput placeholder="Placeholder" />
+      <input
+        type="email"
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+        required
+        formControlName="email"
+        matInput
+        placeholder="Placeholder"
+      />
+      <mat-error *ngIf="m.email.errors?.required">Please enter email</mat-error>
+      <mat-error *ngIf="m.email.errors?.pattern">email is not valid</mat-error>
     </mat-form-field>
+
     <mat-form-field appearance="outline" class="m-3 formFW">
       <mat-label>Phone</mat-label>
-      <input formControlName="phone" matInput placeholder="Placeholder" />
+      <input
+        pattern="[0-9]{10}$"
+        required
+        formControlName="phone"
+        matInput
+        placeholder="Placeholder"
+      />
+
+      <mat-error *ngIf="m.phone.errors?.required"
+        >Please enter mobile number</mat-error
+      >
+      <mat-error *ngIf="m.phone.errors?.pattern"
+        >Mobile number is not 10 digit</mat-error
+      >
     </mat-form-field>
     <mat-form-field appearance="outline" class="m-3 formFW">
       <mat-label>Address</mat-label>
-      <input formControlName="address" matInput placeholder="Placeholder" />
+      <input
+        type="text"
+        formControlName="address"
+        matInput
+        placeholder="Placeholder"
+      />
+      <mat-error *ngIf="customerForm.invalid">this field is required</mat-error>
     </mat-form-field>
     <mat-form-field appearance="outline" class="m-3 formFW">
       <mat-label>City</mat-label>
@@ -43,6 +91,7 @@
         Close
       </button>
       <button
+        [disabled]="!customerForm.valid"
         mat-raised-button
         color="primary"
         mat-dialog-close

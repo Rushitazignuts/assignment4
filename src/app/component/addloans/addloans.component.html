@@ -1,37 +1,70 @@
-<h1 mat-dialog-title>Add Loan</h1>
+<div class="d-flex flex-row flex-nowrap justify-content-between mt-1">
+  <h1 mat-dialog-title>Add Loan</h1>
+</div>
+
 <div mat-dialog-container>
   <form [formGroup]="productForm">
     <mat-form-field appearance="outline" class="m-3 formFW">
       <mat-label>Payment Id</mat-label>
-      <input formControlName="PaymentId" matInput placeholder="Placeholder" />
+      <input
+        type="number"
+        min="0"
+        formControlName="PaymentId"
+        required
+        matInput
+        placeholder="Placeholder"
+      />
+      <mat-error *ngIf="productForm.invalid">this field is required</mat-error>
     </mat-form-field>
     <mat-form-field appearance="outline" class="m-3 formFW">
       <mat-label>Customer Id</mat-label>
-      <input formControlName="CustomerId" matInput placeholder="Placeholder" />
+      <input
+        type="number"
+        min="0"
+        formControlName="CustomerId"
+        matInput
+        placeholder="Placeholder"
+      />
+      <mat-error *ngIf="productForm.invalid">this field is required</mat-error>
     </mat-form-field>
     <mat-form-field appearance="outline" class="m-3 formFW">
       <mat-label>Customer Name</mat-label>
       <input
+        type="text"
         formControlName="CustomerName"
         matInput
         placeholder="Placeholder"
       />
+      <mat-error *ngIf="productForm.invalid">this field is required</mat-error>
     </mat-form-field>
     <mat-form-field appearance="outline" class="m-3 formFW">
       <mat-label>Amount</mat-label>
       <input formControlName="Amount" matInput placeholder="Placeholder" />
+      <mat-error *ngIf="productForm.invalid">this field is required</mat-error>
     </mat-form-field>
     <mat-form-field appearance="outline" class="m-3 formFW">
       <mat-label>Tax</mat-label>
-      <input formControlName="Tax" matInput placeholder="Placeholder" />
+      <input
+        formControlName="Tax"
+        matInput
+        pattern="[0-9]{1,}%"
+        placeholder="5%.."
+      />
+      <mat-error *ngIf="productForm.invalid">this field is required</mat-error>
     </mat-form-field>
     <mat-form-field appearance="outline" class="m-3 formFW">
       <mat-label>Mode</mat-label>
-      <input formControlName="Mode" matInput placeholder="Placeholder" />
+      <input formControlName="Mode" matInput placeholder="Online,Cash.." />
+      <mat-error *ngIf="productForm.invalid">Please enter a mode</mat-error>
     </mat-form-field>
-    <mat-form-field appearance="outline" class="m-3 formFW">
+    <mat-form-field appearance="fill" class="m-3 formFW">
       <mat-label>Date</mat-label>
-      <input formControlName="Date" matInput placeholder="Placeholder" />
+      <input
+        type="date"
+        formControlName="Date"
+        matInput
+        placeholder="Placeholder"
+      />
     </mat-form-field>
     <mat-form-field appearance="outline" class="m-3 formFW">
       <mat-label>Notes</mat-label>
@@ -47,6 +80,7 @@
         Close
       </button>
       <button
+        [disabled]="!productForm.valid"
         mat-raised-button
         color="primary"
         mat-dialog-close

@@ -4,6 +4,9 @@ import { LoanService } from '../../service/loan.service';
 
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AddloansComponent } from '../addloans/addloans.component';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 export interface Column {
   columnDef: string;
   header: string;
@@ -19,12 +22,13 @@ export class LoansComponent implements OnInit {
   tableData: any;
   loanData: any;
   tableColumns!: Column[];
-
+  dataSource!: MatTableDataSource<any>;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
   constructor(private loanService: LoanService, private dialog: MatDialog) {}
   ngOnInit() {
     this.loanData = this.loanService.getLoanData().subscribe((data: any) => {
       this.getLoanData = data;
-      
     });
     this.initColumns();
   }
@@ -54,6 +58,14 @@ export class LoansComponent implements OnInit {
         columnDef: 'Mode',
         header: 'Mode',
       },
+      {
+        columnDef: 'Date',
+        header: 'Date',
+      },
+      {
+        columnDef: 'Notes',
+        header: 'Notes',
+      },
     ];
   }
   openDialog() {
@@ -64,7 +76,8 @@ export class LoansComponent implements OnInit {
       })
       .afterClosed()
       .subscribe((val) => {
-        if (val == 'save') {
+        if (val === 'save') {
+          
         }
       });
   }
@@ -78,15 +91,17 @@ export class LoansComponent implements OnInit {
       })
       .afterClosed()
       .subscribe((val) => {
-        if (val == 'update') {
+        if (val === 'update') {
+          this.ngOnInit();
         }
       });
   }
-  deleteData(id:number) {
+  deleteData(id: number) {
     if (confirm('are you sure want to delete')) {
       this.loanService.LoanDelete(id).subscribe({
         next: (res) => {
           alert('delete');
+          this.ngOnInit();
         },
         error: () => {
           alert('error');

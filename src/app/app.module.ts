@@ -29,6 +29,8 @@ import { AddloansComponent } from './component/addloans/addloans.component';
 import { CustomersComponent } from './component/customers/customers.component';
 import { AddcustomersComponent } from './component/addcustomers/addcustomers.component';
 import { TableComponent } from './shared/table/table.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -64,6 +66,8 @@ import { TableComponent } from './shared/table/table.component';
     MatListModule,
     NgApexchartsModule,
     MatDividerModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

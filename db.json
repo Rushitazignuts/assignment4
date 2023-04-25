@@ -1,23 +1,23 @@
 {
   "loans": [
     {
-      "PaymentId": "501",
+      "PaymentId": "509",
       "CustomerId": "201",
-      "CustomerName": "john",
+      "CustomerName": "john ",
       "Amount": "$1234",
-      "Tax": "7%",
-      "Mode": "online",
-      "Date": "1-2-2022",
+      "Tax": "3%",
+      "Mode": "ofline",
+      "Date": "2000-05-25",
       "Notes": "notes",
       "id": 701
     },
     {
       "PaymentId": "502",
       "CustomerId": "202",
-      "CustomerName": "john",
+      "CustomerName": "ruchita",
       "Amount": "$1234",
-      "Tax": "7%",
-      "Mode": "online",
+      "Tax": "5%",
+      "Mode": "offline",
       "Date": "1-2-2022",
       "Notes": "notes",
       "id": 702
@@ -40,7 +40,7 @@
       "Amount": "$2345",
       "Tax": "8%",
       "Mode": "cash",
-      "Date": "1-2-2022",
+      "Date": "0004-05-31",
       "Notes": "this is note",
       "id": 704
     },
@@ -65,6 +65,193 @@
       "Date": "2-2-2023",
       "Notes": "notes",
       "id": 706
+    },
+    {
+      "PaymentId": "508",
+      "CustomerId": "709",
+      "CustomerName": "Janvi",
+      "Amount": "$234",
+      "Tax": "9%",
+      "Mode": "Offline",
+      "Date": "1-2-2023",
+      "Notes": "notes",
+      "id": 707
+    },
+    {
+      "PaymentId": "509",
+      "CustomerId": "709",
+      "CustomerName": "thomas",
+      "Amount": "$234",
+      "Tax": "5%",
+      "Mode": "online",
+      "Date": "1-3-2023",
+      "Notes": "notes",
+      "id": 708
+    },
+    {
+      "PaymentId": "510",
+      "CustomerId": "710",
+      "CustomerName": "thomas",
+      "Amount": "$1234",
+      "Tax": "2%",
+      "Mode": "online",
+      "Date": "2-2-2022",
+      "Notes": "gdfvgr",
+      "id": 709
+    },
+    {
+      "PaymentId": "511",
+      "CustomerId": "711",
+      "CustomerName": "Nik",
+      "Amount": "$90",
+      "Tax": "4%",
+      "Mode": "online",
+      "Date": "5-7-2022",
+      "Notes": "notes",
+      "id": 710
+    },
+    {
+      "PaymentId": "512",
+      "CustomerId": "712",
+      "CustomerName": "jonas",
+      "Amount": "$123",
+      "Tax": "5%",
+      "Mode": "offline",
+      "Date": "1-1-2020",
+      "Notes": "gtfrgdg",
+      "id": 711
+    },
+    {
+      "PaymentId": "513",
+      "CustomerId": "713",
+      "CustomerName": "ottoo",
+      "Amount": "$100",
+      "Tax": "6%",
+      "Mode": "offline",
+      "Date": "2-4-2022",
+      "Notes": "notes",
+      "id": 712
+    },
+    {
+      "PaymentId": "514",
+      "CustomerId": "713",
+      "CustomerName": "khus",
+      "Amount": "$45",
+      "Tax": "@%",
+      "Mode": "cash",
+      "Date": "9-4-2023",
+      "Notes": "notes",
+      "id": 713
+    },
+    {
+      "PaymentId": "514",
+      "CustomerId": "714",
+      "CustomerName": "trusha",
+      "Amount": "$20",
+      "Tax": "5%",
+      "Mode": "online",
+      "Date": "2-2-2022",
+      "Notes": "notes",
+      "id": 714
+    },
+    {
+      "PaymentId": "716",
+      "CustomerId": "716",
+      "CustomerName": "kanak",
+      "Amount": "$308",
+      "Tax": "2%",
+      "Mode": "online",
+      "Date": "2022-05-03",
+      "Notes": "fbfgfvg",
+      "id": 715
+    },
+    {
+      "PaymentId": 4,
+      "CustomerId": 6,
+      "CustomerName": "nik",
+      "Amount": "$345",
+      "Tax": "4%",
+      "Mode": "cash",
+      "Date": "2022-04-02",
+      "Notes": "",
+      "id": 716
+    },
+    {
+      "PaymentId": 533,
+      "CustomerId": 716,
+      "CustomerName": "nik",
+      "Amount": "$129",
+      "Tax": "4%",
+      "Mode": "online",
+      "Date": "2022-01-04",
+      "Notes": "notes",
+      "id": 717
+    },
+    {
+      "PaymentId": 540,
+      "CustomerId": 718,
+      "CustomerName": "john",
+      "Amount": "$100",
+      "Tax": "6%",
+      "Mode": "cash",
+      "Date": "2022-05-24",
+      "Notes": "note",
+      "id": 718
+    },
+    {
+      "PaymentId": 540,
+      "CustomerId": 730,
+      "CustomerName": "thomas",
+      "Amount": "$50",
+      "Tax": "3%",
+      "Mode": "cash",
+      "Date": "2022-03-02",
+      "Notes": "",
+      "id": 719
+    },
+    {
+      "PaymentId": 6,
+      "CustomerId": 12,
+      "CustomerName": "otto",
+      "Amount": "$70",
+      "Tax": "3%",
+      "Mode": "online",
+      "Date": "2023-04-02",
+      "Notes": "",
+      "id": 720
+    },
+    {
+      "PaymentId": 589,
+      "CustomerId": 78,
+      "CustomerName": "john duo",
+      "Amount": "$45",
+      "Tax": "4%",
+      "Mode": "online",
+      "Date": "2022-05-03",
+      "Notes": "notes",
+      "id": 721
+    },
+    {
+      "PaymentId": 15,
+      "CustomerId": 10,
+      "CustomerName": "nik jons",
+      "Amount": "$30",
+      "Tax": "6%",
+      "Mode": "online",
+      "Date": "2021-05-02",
+      "Notes": "",
+      "id": 722
+    },
+    {
+      "PaymentId": 6,
+      "CustomerId": 4,
+      "CustomerName": "ruchi",
+      "Amount": "$56",
+      "Tax": "7%",
+      "Mode": "cash",
+      "Date": "2022-06-03",
+      "Notes": "",
+      "id": 723
     }
   ],
   "post": [
@@ -155,15 +342,10 @@
       "lastName": "duo",
       "loanType": "personal",
       "loanAmount": "200000",
-      "email": "otto@gmail.com",
-      "alternateEmail": "",
+      "email": "ottoa@gmail.com",
       "phone": "1212343456",
-      "alternatePhone": "",
       "address": "1234 main street",
-      "address2": "",
       "city": "UP",
-      "state": "UP",
-      "zip": "123456",
       "id": 23
     },
     {
@@ -183,19 +365,14 @@
       "id": 24
     },
     {
-      "firstName": "janki",
+      "firstName": "janvi",
       "lastName": "patel",
       "loanType": "education",
       "loanAmount": "100000",
       "email": "janki@gmail.com",
-      "alternateEmail": "",
       "phone": "2121433467",
-      "alternatePhone": "",
       "address": "Surat",
-      "address2": "",
       "city": "Surat",
-      "state": "Gujarat",
-      "zip": "343456",
       "id": 25
     },
     {
@@ -261,6 +438,28 @@
       "state": "Gujarat",
       "zip": "",
       "id": 31
+    },
+    {
+      "firstName": "john",
+      "lastName": "duo",
+      "loanType": "self",
+      "loanAmount": "100000",
+      "email": "john@gmail.com",
+      "phone": "1234567890",
+      "address": "123dec",
+      "city": "usa",
+      "id": 32
+    },
+    {
+      "firstName": "ruchita",
+      "lastName": "patel",
+      "loanType": "personal",
+      "loanAmount": "90000",
+      "email": "ruchi@gmail.com",
+      "phone": "1234567897",
+      "address": "vdfgvfgtbg",
+      "city": "rajkot",
+      "id": 33
     }
   ]
 }

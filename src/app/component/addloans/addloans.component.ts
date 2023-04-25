@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoanService } from '../../service/loan.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { DatePipe } from '@angular/common';
 @Component({
   selector: 'app-addloans',
   templateUrl: './addloans.component.html',
@@ -20,14 +21,16 @@ export class AddloansComponent implements OnInit {
   ngOnInit(): void {
     this.productForm = this.fb.group({
       PaymentId: ['', Validators.required],
+
       CustomerId: ['', Validators.required],
       CustomerName: ['', Validators.required],
       Amount: ['', Validators.required],
       Tax: ['', Validators.required],
       Mode: ['', Validators.required],
       Date: ['', Validators.required],
-      Notes: ['', Validators.required],
+      Notes: [''],
     });
+
     if (this.editData) {
       this.actionBtn = 'Update';
       this.productForm.controls['PaymentId'].setValue(this.editData.PaymentId);
@@ -45,13 +48,17 @@ export class AddloansComponent implements OnInit {
     }
     console.log(this.editData);
   }
+
   AddLoan() {
     if (!this.editData) {
       if (this.productForm.valid) {
         this.loanService.loanProduct(this.productForm.value).subscribe({
           next: (res) => {
             alert('adedd');
+            this.productForm.reset();
+            this.dialogRef.close('save');
           },
+
           error: () => {
             alert('error');
           },
@@ -65,6 +72,7 @@ export class AddloansComponent implements OnInit {
     this.loanService.put(this.productForm.value, this.editData.id).subscribe({
       next: (res) => {
         alert('Update successfully!');
+
         this.productForm.reset();
         this.dialogRef.close('update');
       },

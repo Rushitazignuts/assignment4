@@ -23,7 +23,6 @@ export class CustomersComponent implements OnInit {
       .getCustomerData()
       .subscribe((data: any) => {
         this.getCustomerData = data;
-        
       });
     this.initColumns();
   }
@@ -73,6 +72,7 @@ export class CustomersComponent implements OnInit {
       .afterClosed()
       .subscribe((val) => {
         if (val == 'save') {
+         
         }
       });
   }
@@ -86,6 +86,7 @@ export class CustomersComponent implements OnInit {
       .afterClosed()
       .subscribe((val) => {
         if (val == 'update') {
+          this.ngOnInit();
         }
       });
   }
@@ -94,6 +95,7 @@ export class CustomersComponent implements OnInit {
       this.loanService.CDelete(id).subscribe({
         next: (res) => {
           alert('delete');
+          this.ngOnInit();
         },
         error: () => {
           alert('error');

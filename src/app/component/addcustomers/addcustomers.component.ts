@@ -1,5 +1,10 @@
 import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { LoanService } from '../../service/loan.service';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
@@ -9,6 +14,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./addcustomers.component.scss'],
 })
 export class AddcustomersComponent implements OnInit {
+  email = new FormControl('', [Validators.required, Validators.email]);
   customerForm!: FormGroup;
   actionBtn: string = 'Save';
 
@@ -27,7 +33,7 @@ export class AddcustomersComponent implements OnInit {
       email: ['', Validators.required],
       phone: ['', Validators.required],
       address: ['', Validators.required],
-      city: ['', Validators.required],
+      city: [''],
     });
     if (this.editCustomer) {
       this.actionBtn = 'Update';
@@ -49,13 +55,18 @@ export class AddcustomersComponent implements OnInit {
       this.customerForm.controls['city'].setValue(this.editCustomer.city);
     }
   }
+  get m() {
+    return this.customerForm.controls;
+  }
 
   AddCustomer() {
     if (!this.editCustomer) {
       if (this.customerForm.valid) {
         this.loanService.postcustomerData(this.customerForm.value).subscribe({
           next: (res) => {
-            alert('adedd');
+            alert('added');
+            this.customerForm.reset();
+            this.dialogRef.close('save');
           },
           error: () => {
             alert('error');
