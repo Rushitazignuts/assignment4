@@ -6,7 +6,7 @@
       "CustomerName": "john ",
       "Amount": "$1234",
       "Tax": "3%",
-      "Mode": "ofline",
+      "Mode": "online",
       "Date": "2000-05-25",
       "Notes": "notes",
       "id": 701
@@ -252,6 +252,50 @@
       "Date": "2022-06-03",
       "Notes": "",
       "id": 723
+    },
+    {
+      "PaymentId": 6,
+      "CustomerId": 8,
+      "CustomerName": "john",
+      "Amount": "$45",
+      "Tax": "2%",
+      "Mode": "online",
+      "Date": "2022-05-03",
+      "Notes": "",
+      "id": 724
+    },
+    {
+      "PaymentId": 2,
+      "CustomerId": 4,
+      "CustomerName": "thomas",
+      "Amount": "$30",
+      "Tax": "3%",
+      "Mode": "cash",
+      "Date": "2022-06-04",
+      "Notes": "",
+      "id": 725
+    },
+    {
+      "PaymentId": 5,
+      "CustomerId": 9,
+      "CustomerName": "ruchi",
+      "Amount": "$100",
+      "Tax": "4%",
+      "Mode": "online",
+      "Date": "2019-07-05",
+      "Notes": "",
+      "id": 726
+    },
+    {
+      "PaymentId": 3,
+      "CustomerId": 4,
+      "CustomerName": "hghbg",
+      "Amount": "$34",
+      "Tax": "6%",
+      "Mode": "cash",
+      "Date": "2020-06-04",
+      "Notes": "notes",
+      "id": 727
     }
   ],
   "post": [
@@ -338,7 +382,7 @@
   ],
   "Customers": [
     {
-      "firstName": "otto",
+      "firstName": "ottooo",
       "lastName": "duo",
       "loanType": "personal",
       "loanAmount": "200000",
@@ -460,6 +504,17 @@
       "address": "vdfgvfgtbg",
       "city": "rajkot",
       "id": 33
+    },
+    {
+      "firstName": "john",
+      "lastName": "duo",
+      "loanType": "self",
+      "loanAmount": "$100",
+      "email": "john@gmail.com",
+      "phone": "1111111111",
+      "address": "1234 main street",
+      "city": "surat",
+      "id": 34
     }
   ]
 }

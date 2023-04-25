@@ -77,7 +77,7 @@ export class LoansComponent implements OnInit {
       .afterClosed()
       .subscribe((val) => {
         if (val === 'save') {
-          
+          location.reload()
         }
       });
   }
@@ -92,10 +92,11 @@ export class LoansComponent implements OnInit {
       .afterClosed()
       .subscribe((val) => {
         if (val === 'update') {
-          this.ngOnInit();
+          location.reload()
         }
       });
   }
+
   deleteData(id: number) {
     if (confirm('are you sure want to delete')) {
       this.loanService.LoanDelete(id).subscribe({

@@ -72,7 +72,7 @@ export class CustomersComponent implements OnInit {
       .afterClosed()
       .subscribe((val) => {
         if (val == 'save') {
-         
+          location.reload()
         }
       });
   }
@@ -86,7 +86,7 @@ export class CustomersComponent implements OnInit {
       .afterClosed()
       .subscribe((val) => {
         if (val == 'update') {
-          this.ngOnInit();
+          location.reload()
         }
       });
   }
