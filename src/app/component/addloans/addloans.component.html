@@ -12,7 +12,7 @@
         formControlName="PaymentId"
         required
         matInput
-        placeholder="Placeholder"
+        placeholder="PaymentId"
       />
       <mat-error *ngIf="productForm.invalid">this field is required</mat-error>
     </mat-form-field>
@@ -23,7 +23,7 @@
         min="0"
         formControlName="CustomerId"
         matInput
-        placeholder="Placeholder"
+        placeholder="CustomerId"
       />
       <mat-error *ngIf="productForm.invalid">this field is required</mat-error>
     </mat-form-field>
@@ -33,14 +33,23 @@
         type="text"
         formControlName="CustomerName"
         matInput
-        placeholder="Placeholder"
+        placeholder="CustomerName"
       />
       <mat-error *ngIf="productForm.invalid">this field is required</mat-error>
     </mat-form-field>
     <mat-form-field appearance="outline" class="m-3 formFW">
       <mat-label>Amount</mat-label>
-      <input formControlName="Amount" matInput placeholder="Placeholder" />
-      <mat-error *ngIf="productForm.invalid">this field is required</mat-error>
+      <input
+        type="text"
+        pattern="^[0-9]*$"
+        formControlName="Amount"
+        matInput
+        placeholder="Amount"
+      />
+      <mat-error *ngIf="m.Amount.errors?.required"
+        >this field is required</mat-error
+      >
+      <mat-error *ngIf="m.Amount.errors?.pattern">enter only number</mat-error>
     </mat-form-field>
     <mat-form-field appearance="outline" class="m-3 formFW">
       <mat-label>Tax</mat-label>
@@ -57,18 +66,23 @@
       <input formControlName="Mode" matInput placeholder="Online,Cash.." />
       <mat-error *ngIf="productForm.invalid">Please enter a mode</mat-error>
     </mat-form-field>
-    <mat-form-field appearance="fill" class="m-3 formFW">
+    <mat-form-field appearance="outline" class="m-3 formFW">
       <mat-label>Date</mat-label>
       <input
-        type="date"
         formControlName="Date"
         matInput
-        placeholder="Placeholder"
+        [matDatepicker]="picker"
+        placeholder="choose data"
       />
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
     <mat-form-field appearance="outline" class="m-3 formFW">
       <mat-label>Notes</mat-label>
-      <input formControlName="Notes" matInput placeholder="Placeholder" />
+      <input formControlName="Notes" matInput placeholder="notes" />
     </mat-form-field>
     <div mat-dialog-action [align]="'start'">
       <button

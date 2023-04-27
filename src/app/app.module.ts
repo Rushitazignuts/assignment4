@@ -31,6 +31,10 @@ import { AddcustomersComponent } from './component/addcustomers/addcustomers.com
 import { TableComponent } from './shared/table/table.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import {
+  MatMomentDateModule,
+  MAT_MOMENT_DATE_ADAPTER_OPTIONS,
+} from '@angular/material-moment-adapter';
 
 @NgModule({
   declarations: [
@@ -68,6 +72,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatDividerModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatMomentDateModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

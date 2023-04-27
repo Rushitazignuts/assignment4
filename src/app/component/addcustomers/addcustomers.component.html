@@ -7,9 +7,11 @@
         type="text"
         formControlName="firstName"
         matInput
-        placeholder="Placeholder"
+        placeholder="firstName"
       />
-      <mat-error *ngIf="customerForm.invalid">this field is required</mat-error>
+      <mat-error *ngIf="customerForm.invalid && customerForm.touched"
+        >this field is required</mat-error
+      >
     </mat-form-field>
     <mat-form-field appearance="outline" class="m-3 formFW">
       <mat-label>last Name</mat-label>
@@ -17,7 +19,7 @@
         type="text"
         formControlName="lastName"
         matInput
-        placeholder="Placeholder"
+        placeholder="lastName"
       />
       <mat-error *ngIf="customerForm.invalid">this field is required</mat-error>
     </mat-form-field>
@@ -27,14 +29,26 @@
         type="text"
         formControlName="loanType"
         matInput
-        placeholder="Placeholder"
+        placeholder="LoanType"
       />
       <mat-error *ngIf="customerForm.invalid">this field is required</mat-error>
     </mat-form-field>
     <mat-form-field appearance="outline" class="m-3 formFW">
       <mat-label>Loan Amount</mat-label>
-      <input formControlName="loanAmount" matInput placeholder="$100" />
-      <mat-error *ngIf="customerForm.invalid">this field is required</mat-error>
+      <input
+        type="text"
+        pattern="^[0-9]*$"
+        formControlName="loanAmount"
+        matInput
+        required
+        placeholder="1000"
+      />
+      <mat-error *ngIf="m.loanAmount.errors?.required"
+        >this field is required</mat-error
+      >
+      <mat-error *ngIf="m.loanAmount.errors?.pattern"
+        >enter only number</mat-error
+      >
     </mat-form-field>
     <mat-form-field appearance="outline" class="m-3 formFW">
       <mat-label>Email</mat-label>
@@ -44,7 +58,7 @@
         required
         formControlName="email"
         matInput
-        placeholder="Placeholder"
+        placeholder="email@gmail.com"
       />
       <mat-error *ngIf="m.email.errors?.required">Please enter email</mat-error>
       <mat-error *ngIf="m.email.errors?.pattern">email is not valid</mat-error>
@@ -57,7 +71,7 @@
         required
         formControlName="phone"
         matInput
-        placeholder="Placeholder"
+        placeholder="1234567890"
       />
 
       <mat-error *ngIf="m.phone.errors?.required"
@@ -73,7 +87,7 @@
         type="text"
         formControlName="address"
         matInput
-        placeholder="Placeholder"
+        placeholder="address"
       />
       <mat-error *ngIf="customerForm.invalid">this field is required</mat-error>
     </mat-form-field>

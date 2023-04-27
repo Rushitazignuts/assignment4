@@ -10,6 +10,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { LoanService } from 'src/app/service/loan.service';
+import * as moment from 'moment';
 export interface Column {
   columnDef: string;
   header: string;
@@ -63,6 +64,7 @@ export class TableComponent implements OnInit {
       this.dataSource.sort = this.sort;
       this.dataSource.paginator = this.paginator;
     });
+
     this.loanService.getLoanData().subscribe((data) => {
       this.getLoanData = data;
       this.dataSource.sort = this.sort;
@@ -88,6 +90,9 @@ export class TableComponent implements OnInit {
       this.getLoanData = data;
 
       this.dataSource = new MatTableDataSource<any>(data);
+      data.forEach((e: any, i: number) => {
+        data[i].Date = moment(e.Date).format('D-MM-YYYY');
+      });
     });
   }
   setCustomerDataSource(data: any) {

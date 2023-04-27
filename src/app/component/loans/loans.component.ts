@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 
 import { LoanService } from '../../service/loan.service';
 
@@ -7,6 +7,7 @@ import { AddloansComponent } from '../addloans/addloans.component';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+
 export interface Column {
   columnDef: string;
   header: string;
@@ -25,6 +26,8 @@ export class LoansComponent implements OnInit {
   dataSource!: MatTableDataSource<any>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+
+  @Input() data = '';
   constructor(private loanService: LoanService, private dialog: MatDialog) {}
   ngOnInit() {
     this.loanData = this.loanService.getLoanData().subscribe((data: any) => {
@@ -77,7 +80,7 @@ export class LoansComponent implements OnInit {
       .afterClosed()
       .subscribe((val) => {
         if (val === 'save') {
-          location.reload()
+          location.reload();
         }
       });
   }
@@ -92,7 +95,7 @@ export class LoansComponent implements OnInit {
       .afterClosed()
       .subscribe((val) => {
         if (val === 'update') {
-          location.reload()
+          location.reload();
         }
       });
   }
@@ -102,7 +105,7 @@ export class LoansComponent implements OnInit {
       this.loanService.LoanDelete(id).subscribe({
         next: (res) => {
           alert('delete');
-          this.ngOnInit();
+          location.reload();
         },
         error: () => {
           alert('error');

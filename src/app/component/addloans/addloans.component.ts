@@ -2,7 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoanService } from '../../service/loan.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { DatePipe } from '@angular/common';
+
 @Component({
   selector: 'app-addloans',
   templateUrl: './addloans.component.html',
@@ -46,7 +46,6 @@ export class AddloansComponent implements OnInit {
       this.productForm.controls['Date'].setValue(this.editData.Date);
       this.productForm.controls['Notes'].setValue(this.editData.Notes);
     }
-    console.log(this.editData);
   }
 
   AddLoan() {
@@ -67,6 +66,9 @@ export class AddloansComponent implements OnInit {
     } else {
       this.updateData();
     }
+  }
+  get m() {
+    return this.productForm.controls;
   }
   updateData() {
     this.loanService.put(this.productForm.value, this.editData.id).subscribe({

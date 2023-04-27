@@ -1,37 +1,17 @@
 <div class="container-fluid bg-light">
   <div class="mx-3">
     <h2 class="p-3">Dashboard</h2>
-    <div
-      class="alert alert-light alert-dismissible fade show text-center"
-      role="alert"
-    >
-      <strong
-        >Welcome Back, ARC! Arc tutorial Bootstrap 5 Admin dashboard template
-        for Mean stack tutorial. the design is simple and clean so its great
-        modern web app.
-      </strong>
-      <button
-        type="button"
-        class="btn-close"
-        data-bs-dismiss="alert"
-        aria-label="Close"
-      >
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
 
-    <div class="d-flex flex-row flex-wrap mt-3">
-      <div class="bg-warning text-center p-3 m-2 stats">
-        TOTAL SALES<br />$12,628<br />20%
+    <div class="d-flex flex-row flex-wrap mt-3 justify-content-center">
+      <div *ngIf="getLoanData" class="bg-warning text-center p-4 m-2 stats">
+        TOTAL Amount<br />₹{{ total }}<br />
       </div>
-      <div class="bg-info text-center p-3 m-2 stats">
-        EXPENSES<br />$2,250<br />5%
+      <div *ngIf="getLoanData" class="bg-info text-center p-4 m-2 stats">
+        Loans <br />
+        {{ getLoanData.length }}<br />
       </div>
-      <div class="bg-success text-center p-3 m-2 stats">
-        PROJECTS<br />23<br />Open
-      </div>
-      <div class="bg-secondary text-center p-3 m-2 stats">
-        INVOICES<br />6<br />New
+      <div *ngIf="getCustomerData" class="bg-success text-center p-4 m-2 stats">
+        Customers<br />{{ getCustomerData.length }}<br />
       </div>
     </div>
   </div>

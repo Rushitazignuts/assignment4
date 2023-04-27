@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-
 import { LoanService } from '../../service/loan.service';
 import { MatDialog } from '@angular/material/dialog';
 import { AddcustomersComponent } from '../addcustomers/addcustomers.component';
@@ -72,7 +71,7 @@ export class CustomersComponent implements OnInit {
       .afterClosed()
       .subscribe((val) => {
         if (val == 'save') {
-          location.reload()
+          location.reload();
         }
       });
   }
@@ -86,7 +85,7 @@ export class CustomersComponent implements OnInit {
       .afterClosed()
       .subscribe((val) => {
         if (val == 'update') {
-          location.reload()
+          location.reload();
         }
       });
   }
@@ -95,7 +94,7 @@ export class CustomersComponent implements OnInit {
       this.loanService.CDelete(id).subscribe({
         next: (res) => {
           alert('delete');
-          this.ngOnInit();
+          location.reload();
         },
         error: () => {
           alert('error');
